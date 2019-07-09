@@ -13,6 +13,7 @@ class Rover(var directionManager: DirectionManager) {
                 }
             }
         }
+        println("${directionManager.locationManager.Xaxis} ${directionManager.locationManager.Yaxis} ${directionManager.currentDirection}")
     }
 
 }
