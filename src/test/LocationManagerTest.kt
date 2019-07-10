@@ -12,8 +12,8 @@ class LocationManagerTest {
     @Test
     fun checkXaxis_YaxisOfLocationManager() {
         locationManager = LocationManager(4, 5)
-        Assertions.assertEquals(4, locationManager?.Xaxis)
-        Assertions.assertEquals(5, locationManager?.Yaxis)
+        assertEquals(4, locationManager?.Xaxis)
+        assertEquals(5, locationManager?.Yaxis)
     }
 
 

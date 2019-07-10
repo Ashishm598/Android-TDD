@@ -3,7 +3,7 @@ package nasa
 class DirectionManager(var locationManager: LocationManager, var currentDirection: Char) {
 
     val directionList = arrayOf('N', 'E', 'S', 'W')
-    var currentDirectionPointer = getPointerByDirection(currentDirection)
+
 
     private fun getPointerByDirection(currentDirection: Char): Int {
         return directionList.indexOf(currentDirection)
@@ -14,19 +14,19 @@ class DirectionManager(var locationManager: LocationManager, var currentDirectio
     }
 
     fun shiftRoverToLeft() {
-        if (currentDirectionPointer == 0) currentDirectionPointer = directionList.lastIndex
+        if (getPointerByDirection(currentDirection) == 0) currentDirection = directionList.get(directionList.lastIndex)
         else
-            currentDirectionPointer--
+            currentDirection = directionList.get(getPointerByDirection(currentDirection).minus(1))
     }
 
     fun shiftRoverToRight() {
-        if (currentDirectionPointer == directionList.lastIndex) currentDirectionPointer = 0
+        if (currentDirection == directionList.get(directionList.lastIndex)) currentDirection = directionList.get(0)
         else
-            currentDirectionPointer++
+            currentDirection = directionList.get(getPointerByDirection(currentDirection).plus(1))
     }
 
     fun moveRoverLocation() {
-        when (getCurrentDirectionByCurrentPointer(currentDirectionPointer)) {
+        when (currentDirection) {
             'N' -> locationManager.Yaxis++   // move Y axis up ++
             'S' -> locationManager.Yaxis-- // move Y axis down --
             'E' -> locationManager.Xaxis++  // move X axis forward ++

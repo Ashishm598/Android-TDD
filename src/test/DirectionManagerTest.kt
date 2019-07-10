@@ -15,7 +15,7 @@ class DirectionManagerTest {
         locationManager = LocationManager(3, 3)
         directionManager = DirectionManager(locationManager!!, 'N')
 
-        Assertions.assertEquals('W', directionManager?.shiftRoverToLeft())
+        Assertions.assertEquals('N', directionManager?.currentDirection)
 
     }
 
