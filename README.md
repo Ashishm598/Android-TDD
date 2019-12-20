@@ -1,4 +1,4 @@
-# Kotlin-TDD & SOLID Principle
+# Kotlin-TDD & SOLID Principles
 
 Simple TDD (Test Driven Development) in Kotlin using SOLID Principles 
 
